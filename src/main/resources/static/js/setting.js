@@ -5,7 +5,7 @@ $(function () {
 
 function upload() {
     $.ajax({
-        url: "http://upload.qiniup.com",
+        url: "http://up-z2.qiniup.com",
         method: "post",
         processData: false, // 不要把表单内容转换成字符串
         contentType: false, // 不要 Jquery 自动设置上传的类型
