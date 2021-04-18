@@ -75,6 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                         AUTHORITY_ADMIN
                 )
 
+
                 .anyRequest().permitAll()
 
                 .and().csrf().disable();
