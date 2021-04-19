@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 	<title>资源交流论坛 - 首页</title>
 </head>
-<body>	
+<body>
 	<div class="nk-container">
 		<!-- 头部 -->
 		<header class="bg-light sticky-top" th:fragment="header" style="box-shadow: 5px 5px 5px #cfcccc;">
@@ -69,6 +69,36 @@
 		<div class="main">
 			<div class="container">
 				<div class="position-relative">
+					<h3>欢迎来到本网站</h3>
+				</div>
+				<ul class="list-unstyled">
+					<li class="media pb-3 pt-3 mb-3 border-bottom" th:each="map:${discussPosts}" th:if="${map.user.id==2}">
+						<a th:href="@{|/user/profile/${map.user.id}|}">
+							<img th:src="${map.user.headerUrl}" class="mr-4 rounded-circle" alt="用户头像" style="width:50px;height:50px;">
+						</a>
+						<div class="media-body">
+							<h6 class="mt-0 mb-3">
+								<a th:href="@{|/discuss/detail/${map.post.id}|}" th:utext="${map.post.title}"></a>
+								<span class="badge badge-secondary bg-danger" th:if="${map.post.type==1}"
+									  style="font-weight: 500; color: #f85959; background-color: rgba(248,89,89,0.1) !important;">顶</span>
+								<span class="badge badge-secondary bg-primary" th:if="${map.post.status==1}"
+									  style="font-weight: 500; color: #3c8cff; background-color: rgba(60,140,255,0.1) !important;">精</span>
+							</h6>
+							<div class="text-muted font-size-12">
+								<u class="mr-3" th:utext="${map.user.username}"></u> 发布于 <b th:text="${#dates.format(map.post.createTime,'yyyy-MM-dd HH:mm:ss')}"></b>
+								<ul class="d-inline float-right">
+									<li class="d-inline ml-2">赞 <span th:text="${map.likeCount}"></span></li>
+									<li class="d-inline ml-2">|</li>
+									<li class="d-inline ml-2">回帖 <span th:text="${map.post.commentCount}"></span></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<br>
+			<div class="container">
+				<div class="position-relative">
 					<!-- 筛选条件 -->
 					<ul class="nav nav-tabs mb-3">
 						<li class="nav-item">
@@ -125,7 +155,7 @@
 				
 				<!-- 帖子列表 -->
 				<ul class="list-unstyled">
-					<li class="media pb-3 pt-3 mb-3 border-bottom" th:each="map:${discussPosts}">
+					<li class="media pb-3 pt-3 mb-3 border-bottom" th:each="map:${discussPosts}" th:if="${map.user.id != 2}">
 						<a th:href="@{|/user/profile/${map.user.id}|}">
 							<img th:src="${map.user.headerUrl}" class="mr-4 rounded-circle" alt="用户头像" style="width:50px;height:50px;">
 						</a>
