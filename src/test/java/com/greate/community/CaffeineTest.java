@@ -24,9 +24,9 @@ public class CaffeineTest {
      */
     @Test
     public void initDataForTest() {
-        for (int i = 0; i < 3000; i++) {
+        for (int i = 0; i < 300; i++) {
             DiscussPost post = new DiscussPost();
-            post.setUserId(111);
+            post.setUserId(4);
             post.setTitle("测试数据");
             post.setContent("兄弟们，冲");
             post.setCreateTime(new Date());

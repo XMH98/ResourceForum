@@ -195,3 +195,38 @@ em {
 	font-style: normal;
 	color: red;
 }
+
+.kl{
+	margin-left: 5%;
+}
+
+.kr{
+	width: 400px;
+	margin-right: 5%;
+
+}
+
+.kt{
+	margin-top: -550px;
+}
+.pr{
+	width: 350px;
+	height: 470px;
+	border-radius:5px
+}
+
+.top{
+	margin-top: 10px;
+	float: right;
+}
+
+.search_logo {
+	position: relative;
+	top: -9px;
+	margin-right: 20px;
+	float: left;
+	background-image: url(https://tb2.bdstatic.com/tb/static-common/img/search_logo_big_v1_8d039f9.png);
+	background-size: cover;
+	width: 135px;
+	height: 45px;
+}
