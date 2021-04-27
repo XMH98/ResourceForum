@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
         web.ignoring().antMatchers("/resources/**");
     }
 
-    // 认证环节我们使用自己的代码 LoginController，绕过 Spring Security 的
+    // 认证环节使用自己的代码 LoginController，绕过 Spring Security 的
 
 
     /**
@@ -119,7 +119,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                 });
 
         // Security 底层会默认拦截 /logout 请求，进行退出处理
-        // 此处赋予它一个根本不存在的退出路径，使得程序能够执行到我们自己编写的退出代码
+        // 此处赋予它一个根本不存在的退出路径，使得程序能够执行到自己编写的退出代码
         http.logout().logoutUrl("/securitylogout");
     }
 }
