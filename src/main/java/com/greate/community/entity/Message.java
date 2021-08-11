@@ -2,6 +2,10 @@ package com.greate.community.entity;
 
 import java.util.Date;
 
+/**
+ * 通知
+ */
+
 public class Message {
 
     private int id;

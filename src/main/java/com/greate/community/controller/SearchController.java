@@ -31,7 +31,7 @@ public class SearchController implements CommunityConstant {
 
     /**
      * 搜索
-     * search?keword=xxx
+     * search?keyword=xxx
      * @param keyword 关键词
      * @param page
      * @param model
